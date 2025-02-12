@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaitanya Kumar | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1a1a2e;       /* Deep Purple */
+            --primary-accent: #e94560;     /* Vibrant Pink */
+            --secondary-accent: #f9c74f;   /* Golden Yellow */
+            --text-primary: #a8a8c0;       /* Light Grayish Purple */
+            --pure-white: #f0f0f0;         /* Off-White */
+        }
+
+        body {
+            background-color: var(--primary-dark);
+            color: var(--pure-white);
+            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-effect {
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        /* Hover Effects */
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
+        }
+
+        /* Project Tags */
+        .project-tag {
+            background: rgba(233, 69, 96, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin: 4px;
+            font-size: 0.9rem;
+            color: var(--primary-accent);
+        }
+
+        /* Button Glow Effect */
+        .glow-on-hover {
+            transition: box-shadow 0.3s ease;
+        }
+
+        .glow-on-hover:hover {
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.6);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-accent);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-accent);
+        }
+
+        /* Creative Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .rotate {
+            animation: rotate 10s linear infinite;
+        }
+
+        /* Background Particles */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Particles -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full glass-effect z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold gradient-text">CK</h1>
+            <div class="space-x-8 hidden md:flex">
+                <a href="#about" class="nav-link hover:text-primary-accent transition">About</a>
+                <a href="#skills" class="nav-link hover:text-primary-accent transition">Skills</a>
+                <a href="#projects" class="nav-link hover:text-primary-accent transition">Projects</a>
+                <a href="#contact" class="nav-link hover:text-primary-accent transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+      <section id="home" class="min-h-screen flex items-center justify-center px-6 relative">
+        <div class="container mx-auto text-center" data-aos="fade-up">
+            <div class="floating mb-12">
+                <img src="https://i.imgur.com/BOJEV62.jpg" alt="Chaitanya" 
+                     class="w-64 h-64 rounded-full mx-auto border-4 border-primary-accent 
+                            hover:rotate-12 transition-transform duration-500">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in">Chaitanya Kumar</h1>
+            <div class="gradient-text text-2xl md:text-4xl mb-8 fade-in">
+                <span class="typed-text"></span>
+            </div>
+            <div class="space-x-4 fade-in">
+                <a href="#projects" class="cta-btn bg-primary-accent text-primary-dark py-3 px-8 rounded-lg glow-on-hover">View My Work</a>
+                <a href="#resume" class="cta-btn border-2 border-primary-accent py-3 px-8 rounded-lg hover:bg-primary-accent hover:text-primary-dark transition">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-secondary-dark/20">
+        <div class="container mx-auto" data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">About Me</h2>
+            <div class="max-w-3xl mx-auto text-lg">
+                <p class="mb-6 fade-in">
+                    Hi, I'm Chaitanya Kumar, a passionate and dedicated Computer Science and Engineering student at VIT, AP. Currently in my final year, I combine technical expertise with innovative thinking to solve real-world problems.
+                </p>
+                <p class="fade-in">
+                    Driven by curiosity and commitment to excellence, I aim to develop intelligent systems that make meaningful impacts in data analytics and IoT solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Programming Languages -->
+                <div class="skill-card p-6 text-center hover-scale glass-effect fade-in">
+                    <i class="fab fa-python text-4xl mb-4 text-primary-accent"></i>
+                    <h3 class="font-bold">Python</h3>
+                </div>
+                <div class="skill-card p-6 text-center hover-scale glass-effect fade-in">
+                    <i class="fab fa-java text-4xl mb-4 text-primary-accent"></i>
+                    <h3 class="font-bold">Java</h3>
+                </div>
+                <div class="skill-card p-6 text-center hover-scale glass-effect fade-in">
+                    <i class="fas fa-database text-4xl mb-4 text-primary-accent"></i>
+                    <h3 class="font-bold">SQL</h3>
+                </div>
+
+                <!-- Web Technologies -->
+                <div class="skill-card p-6 text-center hover-scale glass-effect fade-in">
+                    <i class="fab fa-html5 text-4xl mb-4 text-primary-accent"></i>
+                    <h3 class="font-bold">HTML</h3>
+                </div>
+                <div class="skill-card p-6 text-center hover-scale glass-effect fade-in">
+                    <i class="fab fa-css3-alt text-4xl mb-4 text-primary-accent"></i>
+                    <h3 class="font-bold">CSS</h3>
+                </div>
+                <div class="skill-card p-6 text-center hover-scale glass-effect fade-in">
+                    <i class="fab fa-js-square text-4xl mb-4 text-primary-accent"></i>
+                    <h3 class="font-bold">JavaScript</h3>
+                </div>
+
+                <!-- Tools & Frameworks -->
+                <div class="skill-card p-6 text-center hover-scale glass-effect fade-in">
+                    <i class="fas fa-chart-line text-4xl mb-4 text-primary-accent"></i>
+                    <h3 class="font-bold">Power BI</h3>
+                </div>
+                <div class="skill-card p-6 text-center hover-scale glass-effect fade-in">
+                    <i class="fas fa-table text-4xl mb-4 text-primary-accent"></i>
+                    <h3 class="font-bold">Tableau</h3>
+                </div>
+                <div class="skill-card p-6 text-center hover-scale glass-effect fade-in">
+                    <i class="fas fa-file-excel text-4xl mb-4 text-primary-accent"></i>
+                    <h3 class="font-bold">Excel</h3>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-card p-6 text-center hover-scale glass-effect fade-in">
+                    <i class="fas fa-database text-4xl mb-4 text-primary-accent"></i>
+                    <h3 class="font-bold">MySQL</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-secondary-dark/20">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Alcohol Detection Ignition Lock -->
+                <div class="project-card hover-scale" data-aos="zoom-in">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Alcohol Detection Ignition Lock</h3>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Embedded Systems</span>
+                            <span class="project-tag">C++</span>
+                        </div>
+                        <p class="mb-4">Designed and deployed an alcohol detection system to prevent drunk driving, reducing incidents by 40%.</p>
+                        <a href="#" class="text-primary-accent hover:underline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Smart Umbrella -->
+                <div class="project-card hover-scale" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Smart Umbrella</h3>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Hardware Design</span>
+                            <span class="project-tag">Renewable Energy</span>
+                        </div>
+                        <p class="mb-4">Engineered a multifunctional umbrella with obstacle detection, GPS navigation, and solar panels.</p>
+                        <a href="#" class="text-primary-accent hover:underline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Online Retail Store Analysis -->
+                <div class="project-card hover-scale" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Online Retail Store Analysis</h3>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Data Visualization</span>
+                            <span class="project-tag">Python</span>
+                        </div>
+                        <p class="mb-4">Analyzed customer behavior patterns and created dashboards to enhance marketing strategies.</p>
+                        <a href="#" class="text-primary-accent hover:underline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Smart Mirror -->
+                <div class="project-card hover-scale" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Smart Mirror</h3>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Hardware Integration</span>
+                            <span class="project-tag">Real-Time Data</span>
+                        </div>
+                        <p class="mb-4">Developed a smart mirror displaying real-time information using IoT technology.</p>
+                        <a href="#" class="text-primary-accent hover:underline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Plant Disease Detection -->
+                <div class="project-card hover-scale" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Plant Disease Detection</h3>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="project-tag">AI/ML</span>
+                            <span class="project-tag">Computer Vision</span>
+                            <span class="project-tag">Python</span>
+                        </div>
+                        <p class="mb-4">Built an AI model to detect plant diseases from images using convolutional neural networks (CNNs).</p>
+                        <a href="#" class="text-primary-accent hover:underline">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto max-w-2xl">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Contact Me</h2>
+            <form class="space-y-6">
+                <input type="text" placeholder="Name" class="w-full bg-transparent border-b-2 border-primary-accent/50 focus:border-primary-accent py-3 px-4 outline-none">
+                <input type="email" placeholder="Email" class="w-full bg-transparent border-b-2 border-primary-accent/50 focus:border-primary-accent py-3 px-4 outline-none">
+                <textarea rows="5" placeholder="Message" class="w-full bg-transparent border-b-2 border-primary-accent/50 focus:border-primary-accent py-3 px-4 outline-none"></textarea>
+                <a href="mailto:chaitanyakumarbagadi@gmail.com" class="w-full bg-primary-accent text-primary-dark py-3 rounded-lg glow-on-hover text-center block">Send Message</a>
+            </form>
+            <div class="mt-8 text-center">
+                <p class="text-lg">Or connect with me on:</p>
+                <a href="https://www.linkedin.com/in/chaitanya-kumar-bagadi-39ab95248/" target="_blank" class="text-primary-accent hover:underline">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Particles.js Script -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles.js loaded!');
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        new Typed('.typed-text', {
+            strings: ['Software Engineer', 'AI & Data Analyst', 'Web Developer'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+    </script>
+</body>
+</html>
